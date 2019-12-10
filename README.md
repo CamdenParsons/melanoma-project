@@ -28,7 +28,7 @@ $ git clone https://github.com/jrosebr1/simple-keras-rest-api.git
 
 Below you can see the image we wish to classify, some cancer, but more specifically a _beagle_:
 
-![cancer](cancer.jpg)
+![cancer](cancer.JPG)
 
 The Flask + Keras server can be started by running:
 
