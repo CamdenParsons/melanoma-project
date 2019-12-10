@@ -21,7 +21,7 @@ pip install keras
 Next, clone the repo:
 
 ```sh
-$ git clone https://github.com/jrosebr1/simple-keras-rest-api.git
+$ git clone https://github.com/CamdenParsons/melanoma-project.git
 ```
 
 ## Starting the Keras server
