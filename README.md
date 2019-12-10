@@ -26,7 +26,7 @@ $ git clone https://github.com/jrosebr1/simple-keras-rest-api.git
 
 ## Starting the Keras server
 
-Below you can see the image we wish to classify, some cancer, but more specifically a _beagle_:
+Below you can see the image we wish to classify, some cancer, but more specifically a Actinic keratoses:
 
 ![cancer](cancer.JPG)
 
