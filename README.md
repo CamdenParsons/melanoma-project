@@ -2,9 +2,9 @@
 
 The code from this project was inspired by this tutorial from the creators of keras [*Building a simple Keras + deep learning REST API*](https://blog.keras.io/building-a-simple-keras-deep-learning-rest-api.html), published on the Keras.io blog.
 
-This api is simple and is meant to be a simple example of an API that serves a machine learning model. This architecture will not scale well and is not secure.
+This api designn is meant to be a simple example of an API that serves a machine learning model. This architecture will not scale well and is not secure.
 
-The we model used was created with the help of this Kaggle kernel, which is a part of a melanoma machine learning competetion and is using the HAM10000 dataset that contains 10,000 human labeled picture of 7 different types of skin lesions.
+The we model used was created with the help of this Kaggle kernel: https://www.kaggle.com/vbookshelf/skin-lesion-analyzer-tensorflow-js-web-app, which is a part of a melanoma machine learning competetion and is using the HAM10000 dataset that contains 10,000 human labeled picture of 7 different types of skin lesions. 
 
 ## Getting started
 
