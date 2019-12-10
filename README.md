@@ -1,4 +1,4 @@
-# A Simple Keras + deep learning REST API
+# A Simple Keras + deep learning REST API for classifying skin cancer
 
 The code from this project was inspired by this tutorial from the creators of keras [*Building a simple Keras + deep learning REST API*](https://blog.keras.io/building-a-simple-keras-deep-learning-rest-api.html), published on the Keras.io blog.
 
