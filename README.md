@@ -1,17 +1,21 @@
 # A Simple Keras + deep learning REST API
 
-This repository contains the code for [*Building a simple Keras + deep learning REST API*](https://blog.keras.io/building-a-simple-keras-deep-learning-rest-api.html), published on the Keras.io blog.
+The code from this project was inspired by this tutorial from the creators of keras [*Building a simple Keras + deep learning REST API*](https://blog.keras.io/building-a-simple-keras-deep-learning-rest-api.html), published on the Keras.io blog.
 
-The method covered here is intended to be instructional. It is _not_ meant to be production-level and capable of scaling under heavy load. If you're interested in a more advanced Keras REST API that leverages message queues and batching, [please refer to this tutorial](https://www.pyimagesearch.com/2018/01/29/scalable-keras-deep-learning-rest-api/).
+This api is simple and is meant to be a simple example of an API that serves a machine learning model. This architecture will not scale well and is not secure.
 
-For an _even more advanced version_ that includes deploying a model to production, [refer to this blog post](https://www.pyimagesearch.com/2018/02/05/deep-learning-production-keras-redis-flask-apache/).
+The we model used was created with the help of this Kaggle kernel, which is a part of a melanoma machine learning competetion and is using the HAM10000 dataset that contains 10,000 human labeled picture of 7 different types of skin lesions.
 
 ## Getting started
 
-I assume you already have Keras (and a supported backend) installed on your system. From there you need to install [Flask](http://flask.pocoo.org/) and [requests](http://docs.python-requests.org/en/master/):
+install dependancies
 
 ```sh
-$ pip install flask gevent requests
+pip install flask gevent requests
+
+pip install tensorflow
+
+pip install keras
 ```
 
 Next, clone the repo:
@@ -22,9 +26,9 @@ $ git clone https://github.com/jrosebr1/simple-keras-rest-api.git
 
 ## Starting the Keras server
 
-Below you can see the image we wish to classify, a _dog_, but more specifically a _beagle_:
+Below you can see the image we wish to classify, some cancer, but more specifically a _beagle_:
 
-![dog](dog.jpg)
+![cancer](cancer.jpg)
 
 The Flask + Keras server can be started by running:
 
@@ -43,41 +47,14 @@ You can now access the REST API via `http://127.0.0.1:5000`.
 Requests can be submitted via cURL:
 
 ```sh
-$ curl -X POST -F image=@dog.jpg 'http://localhost:5000/predict'
-{
-  "predictions": [
-    {
-      "label": "beagle", 
-      "probability": 0.9901360869407654
-    }, 
-    {
-      "label": "Walker_hound", 
-      "probability": 0.002396771451458335
-    }, 
-    {
-      "label": "pot", 
-      "probability": 0.0013951235450804234
-    }, 
-    {
-      "label": "Brittany_spaniel", 
-      "probability": 0.001283277408219874
-    }, 
-    {
-      "label": "bluetick", 
-      "probability": 0.0010894243605434895
-    }
-  ], 
-  "success": true
-}
+curl -X POST -F image=@cancer.jpg "http://localhost:5000/predict"
+{"predictions":
+[{"Melanocytic nevi":0.0},
+{"Melanoma":0.0},
+{"Benign keratosis-like lesions ":0.0},
+{"Basal cell carcinoma":0.0},
+{"Actinic keratoses":1.0},
+{"Vascular lesions":0.0}],
+"success":true}
 ```
 
-Or programmatically:
-
-```sh
-$ python simple_request.py 
-1. beagle: 0.9901
-2. Walker_hound: 0.0024
-3. pot: 0.0014
-4. Brittany_spaniel: 0.0013
-5. bluetick: 0.0011
-```
